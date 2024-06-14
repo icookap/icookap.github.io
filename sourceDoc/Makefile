@@ -6,7 +6,7 @@
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source/
-BUILDDIR      = ../
+BUILDDIR      = ../docs/
 
 
 # Internal variables.
@@ -16,13 +16,13 @@ SAMPLEOPTS      = -D html_theme=sample
 
 default: html	
 view:
-	open ../index.html
+	open ../docs/index.html
 
 clean:
 	-rm -rf $(BUILDDIR)
 
 html:
-	-rm -rf $(BUILDDIR)/*.html
+	-rm -rf $(BUILDDIR)/*
 	$(SPHINXBUILD) -t html -b html $(SOURCEDIR) $(BUILDDIR)
 	echo "google.com, pub-1185612784580319, DIRECT, f08c47fec0942fa0" >> $(BUILDDIR)/app-ads.txt
 
